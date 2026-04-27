@@ -91,6 +91,8 @@ public class MainController implements Initializable {
 
         task.setOnFailed(e -> {
             countryNameLabel.setText("Error loading countries.");
+            System.out.println("Error: " + task.getException().getMessage());
+            task.getException().printStackTrace();
         });
 
         Thread thread = new Thread(task);

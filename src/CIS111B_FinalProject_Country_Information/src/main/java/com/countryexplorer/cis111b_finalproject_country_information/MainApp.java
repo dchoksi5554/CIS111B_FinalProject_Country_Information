@@ -11,13 +11,13 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception {
 
         FXMLLoader loader = new FXMLLoader(
-                getClass().getResource("main.fxml")
+                getClass().getResource("/com/countryexplorer/cis111b_finalproject_country_information/main.fxml")
         );
 
         Scene scene = new Scene(loader.load(), 900, 600);
 
         scene.getStylesheets().add(
-                getClass().getResource("styles.css")
+                getClass().getResource("/com/countryexplorer/cis111b_finalproject_country_information/styles.css")
                         .toExternalForm()
         );
 
