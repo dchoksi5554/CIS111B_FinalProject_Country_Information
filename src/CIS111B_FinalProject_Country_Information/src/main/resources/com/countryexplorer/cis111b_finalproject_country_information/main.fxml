@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="controller.MainController"
+            prefWidth="900" prefHeight="600">
+
+    <top>
+        <HBox styleClass="top-bar" alignment="CENTER_LEFT">
+            <padding><Insets top="12" right="20" bottom="12" left="20"/></padding>
+            <Label text="Country Explorer" styleClass="app-title"/>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox styleClass="left-panel" prefWidth="200">
+            <TextField fx:id="searchField"
+                       promptText="Search countries..."
+                       styleClass="search-field"/>
+            <ListView fx:id="countryListView"
+                      styleClass="country-list"
+                      VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </left>
+
+    <center>
+        <VBox styleClass="right-panel">
+
+            <HBox styleClass="detail-header" spacing="16"
+                  alignment="CENTER_LEFT">
+                <padding>
+                    <Insets top="16" right="16" bottom="16" left="16"/>
+                </padding>
+                <ImageView fx:id="flagImage"
+                           fitWidth="120" fitHeight="78"
+                           preserveRatio="true"/>
+                <VBox spacing="4">
+                    <Label fx:id="countryNameLabel"
+                           text="Country Name"
+                           styleClass="country-name"/>
+                    <Label fx:id="officialNameLabel"
+                           text="Official Name"
+                           styleClass="official-name"/>
+                </VBox>
+            </HBox>
+
+            <Separator/>
+
+            <VBox styleClass="stats-section" spacing="7">
+                <padding>
+                    <Insets top="12" right="16" bottom="12" left="16"/>
+                </padding>
+                <Label text="COUNTRY DETAILS" styleClass="section-label"/>
+                <HBox spacing="8">
+                    <Label text="Capital" styleClass="stat-key"/>
+                    <Label fx:id="capitalLabel" styleClass="stat-value"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Population" styleClass="stat-key"/>
+                    <Label fx:id="populationLabel" styleClass="stat-value"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Area" styleClass="stat-key"/>
+                    <Label fx:id="areaLabel" styleClass="stat-value"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Language" styleClass="stat-key"/>
+                    <Label fx:id="languageLabel" styleClass="stat-value"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Currency" styleClass="stat-key"/>
+                    <Label fx:id="currencyLabel" styleClass="stat-value"/>
+                </HBox>
+            </VBox>
+
+            <Separator/>
+
+            <VBox styleClass="stats-section" spacing="6">
+                <padding>
+                    <Insets top="10" right="16" bottom="12" left="16"/>
+                </padding>
+                <Label text="ADDITIONAL INFO" styleClass="section-label"/>
+                <HBox spacing="8">
+                    <Label text="Dial Code" styleClass="stat-key"/>
+                    <Label fx:id="dialCodeLabel" styleClass="stat-value"/>
+                </HBox>
+                <HBox spacing="8">
+                    <Label text="Timezone" styleClass="stat-key"/>
+                    <Label fx:id="timezoneLabel" styleClass="stat-value"/>
+                </HBox>
+            </VBox>
+
+            <Separator/>
+
+            <HBox spacing="10" alignment="BOTTOM_CENTER">
+                <padding>
+                    <Insets top="12" right="16" bottom="12" left="16"/>
+                </padding>
+                <Button fx:id="anthemButton"
+                        text="Play National Anthem"
+                        styleClass="anthem-btn"
+                        onAction="#handleAnthemButton"
+                        HBox.hgrow="ALWAYS"
+                        maxWidth="Infinity"/>
+                <Button fx:id="mapsButton"
+                        text="View on Maps"
+                        styleClass="maps-btn"
+                        onAction="#handleMapsButton"
+                        HBox.hgrow="ALWAYS"
+                        maxWidth="Infinity"/>
+            </HBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>
